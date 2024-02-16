@@ -22,7 +22,7 @@ jobs:
         - run: dotnet build Sample.Core/
         
         - name: Create the Infrastructure package
-          run: dotnet pack --configuration Release Sample.Core.Infrastructure
+          run: dotnet pack --configuration Release Sample.Core/Sample.Core.Infrastructure
           
         - name: Publish the Infrastructure package to GPR
           env:
@@ -30,7 +30,7 @@ jobs:
           run: dotnet nuget push /Sample.Core/Sample.Core.Infrastructure/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN
           
         - name: Create the Domain package
-          run: dotnet pack --configuration Release Sample.Core.Domain
+          run: dotnet pack --configuration Release Sample.Core/Sample.Core.Domain
           
         - name: Publish the Domain package to GPR
           env:
