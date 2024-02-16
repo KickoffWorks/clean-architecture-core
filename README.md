@@ -5,6 +5,8 @@ Repository with inner core libraries. Infrastructure and Domain libraries alongs
 
 This aims to solve the issue of not having a common Domain / Infrastructure layer throughout multiple projects/repositories. This also implements clean architecture, having an infrastructure layer that communicates with external services like database, message queues, etc. And a Domain layer where you can setup your entities' logic and models.
 
+NOTE: PostgreSQL is used for this library, it can be easily changed in the ApplicationDbContext class or your project's Program.cs class, if you pass the option to use your provider instead.
+
 ## Setup
 
 ### Architecture
