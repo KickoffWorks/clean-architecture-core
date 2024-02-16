@@ -27,7 +27,7 @@ jobs:
         - name: Publish the Infrastructure package to GPR
           env:
             NUGET_AUTH_TOKEN: ${{secrets.NUGET_GITHUB_TOKEN}}
-          run: dotnet nuget push /Sample.Core/Sample.Core.Infrastructure/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN
+          run: dotnet nuget push Sample.Core/Sample.Core.Infrastructure/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN
           
         - name: Create the Domain package
           run: dotnet pack --configuration Release Sample.Core/Sample.Core.Domain
@@ -35,4 +35,4 @@ jobs:
         - name: Publish the Domain package to GPR
           env:
             NUGET_AUTH_TOKEN: ${{secrets.NUGET_GITHUB_TOKEN}}
-          run: dotnet nuget push /Sample.Core/Sample.Core.Domain/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN
+          run: dotnet nuget push Sample.Core/Sample.Core.Domain/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN
