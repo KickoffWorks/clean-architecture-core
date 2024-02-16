@@ -27,6 +27,8 @@ This way we can update, manage and share our core libraries with multiple projec
 
 To install / use make sure you either clone, fork or use this repository as a template and set up your CI/CD pipeline to build and pack the libraries separately and to push them to your Package Registry of preference.
 
+Setup a repository actions secret in Github with the name NUGET_GITHUB_TOKEN and with your write/read permission personal access token so you can authenticate to your NuGet source. Also make sure to update the username in the source, in the github workflow file.
+
 In the case of future updates, make sure you set some kind of automatic versioning for your NuGet packages or update/add the line below to the libraries' .csproj
 
 ```
