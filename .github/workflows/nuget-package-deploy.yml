@@ -19,9 +19,7 @@ jobs:
           env:
             NUGET_AUTH_TOKEN: ${{secrets.NUGET_GITHUB_TOKEN}}
         
-        - run: cd Sample.Core/
-        
-        - run: dotnet build 
+        - run: dotnet build Sample.Core/
         
         - name: Create the Infrastructure package
           run: dotnet pack --configuration Release Sample.Core.Infrastructure
